@@ -1,0 +1,19 @@
+.buttonCreateChar {
+    cursor: pointer;
+    font-family: 'IM Fell DW Pica', serif;
+    margin: 20px;
+    font-size: 20px;
+    color: silver;
+    width: 200px;
+    height: 35px;
+    border: 1px solid;
+    background:
+        linear-gradient(45deg, silver 50%, transparent 0) right /250% 100% no-repeat,
+        linear-gradient(45deg, transparent 50%,silver 0) left /250% 100% no-repeat;
+    transition: 0.3s;
+}
+
+.buttonCreateChar:hover {
+    background-position: center;
+    color: black;
+}
