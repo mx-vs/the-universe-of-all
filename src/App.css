@@ -1,1 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica&display=swap');
+@import "https://use.fontawesome.com/releases/v5.15.2/css/all.css";
 
+html {
+    box-sizing: border-box;
+    font-family: 'IM Fell DW Pica', serif;
+    color: rgb(41, 29, 20);
+    overflow-y: hidden;
+}
+
+*,
+::before,
+::after {
+    box-sizing: inherit;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+body {
+    max-width: 900px;
+    margin: auto;
+    background: black;
+}
