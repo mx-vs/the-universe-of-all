@@ -1,0 +1,34 @@
+.homeDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: silver;
+}
+
+.homeRealmsDescr {
+    display: flex;
+    list-style: none;
+    padding-bottom: 10px;
+}
+
+.homeRealmsDescr li {
+    padding: 10px;
+}
+
+.mapDiv {
+    overflow: visible;
+}
+
+.map {
+    position: relative;
+    width: 700px;
+    border: 1px solid silver;
+    transition: 0.4s;
+    z-index: 1;
+}
+
+.map:hover {
+    cursor: zoom-in;
+    transform: scale(1.5);
+}
