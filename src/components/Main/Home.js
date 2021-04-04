@@ -31,7 +31,7 @@ const Home = () => {
             </ul>
 
             <div className={styles.mapDiv}>
-                <img src="" alt="" className={styles.map} />
+                <img src="https://i.imgur.com/APW3sDx.png" alt="" className={styles.map} />
             </div>
 
             <p>Map of the Realms</p>

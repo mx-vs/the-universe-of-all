@@ -6,6 +6,10 @@
     color: silver;
 }
 
+.homeDiv p {
+    margin: 10px;
+}
+
 .homeRealmsDescr {
     display: flex;
     list-style: none;
@@ -30,5 +34,5 @@
 
 .map:hover {
     cursor: zoom-in;
-    transform: scale(1.5);
+    transform: scale(1.49);
 }
