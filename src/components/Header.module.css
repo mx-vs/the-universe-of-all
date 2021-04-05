@@ -46,7 +46,7 @@ nav {
 .navLink {
     font-size: 20px;
     list-style: none;
-    width: 150px;
+    width: 120px;
     color: black;
     background:
         linear-gradient(45deg, #000 50%, transparent 0) right /250% 100% no-repeat,

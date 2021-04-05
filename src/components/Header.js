@@ -6,7 +6,7 @@ const Header = () => {
     return (
         <header>
             <div className={styles.headerDiv}>
-                <Link to="/" style={{textDecoration: "none"}}><h1>The Universe</h1></Link>
+                <Link to="/" style={{textDecoration: "none"}}><h1>The Universe of All</h1></Link>
             </div>
 
             <nav>
@@ -14,9 +14,8 @@ const Header = () => {
                     <Link to="/adventures" style={{textDecoration: "none"}} className={styles.navLink}><li>Adventures</li></Link>
                     <Link to="/characters" style={{textDecoration: "none"}} className={styles.navLink}><li>Characters</li></Link>
                     <Link to="/myprofile" style={{textDecoration: "none"}} className={styles.navLink}><li>My Profile</li></Link>
-                    <Link to="/login" style={{textDecoration: "none"}} className={styles.navLink}><li>Login</li></Link>
                     <Link to="/register" style={{textDecoration: "none"}} className={styles.navLink}><li>Register</li></Link>
-
+                    <Link to="/login" style={{textDecoration: "none"}} className={styles.navLink}><li>Login</li></Link>
                 </ul>
             </nav>
         </header>
