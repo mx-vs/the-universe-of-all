@@ -11,6 +11,7 @@ header {
     display: flex;
     justify-content: flex-start;
     padding: 0px 15px;
+    font-size: 20px;
     background:
         linear-gradient(45deg, #000 50%, transparent 0) right /250% 100% no-repeat,
         linear-gradient(45deg, transparent 50%, #000 0) left /250% 100% no-repeat;
@@ -20,11 +21,16 @@ header {
 .headerDiv:hover {
     cursor: pointer;
     background-position: center;
-    color: silver;
+    
 }
 
 h1 {
+    color: black;
     font-size: 20px;
+}
+
+h1:hover {
+    color: silver;
 }
 
 nav {
@@ -41,6 +47,7 @@ nav {
     font-size: 20px;
     list-style: none;
     width: 150px;
+    color: black;
     background:
         linear-gradient(45deg, #000 50%, transparent 0) right /250% 100% no-repeat,
         linear-gradient(45deg, transparent 50%, #000 0) left /250% 100% no-repeat;
