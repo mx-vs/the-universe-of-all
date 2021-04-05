@@ -15,6 +15,12 @@ class Main extends React.Component {
                     <Route exact path="/character-creator">
                         <CharCreator />
                     </Route>
+                    <Route exact path="/adventures">
+                        
+                    </Route>
+                    <Route exact path="/characters">
+                        
+                    </Route>
                 </Switch>
             </main>
         )
