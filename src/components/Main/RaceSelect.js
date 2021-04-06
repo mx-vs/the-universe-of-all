@@ -3,12 +3,29 @@ import styles from "./RaceSelect.module.css"
 
 class RaceSelect extends React.Component {
     render() {
+        let displayNone = {};
+        let displayAstarianRaces = {};
+        let displayIrianRaces = {};
+
+        if (this.props.realmSelected === "none") {
+            displayAstarianRaces.display = "none";
+            displayIrianRaces.display = "none";
+        } else if(this.props.realmSelected === "astarian") {
+            displayIrianRaces.display = "none";
+        } else if(this.props.realmSelected === "irian") {
+            displayAstarianRaces.display = "none";
+        }
+
         return (
             <section className={styles.charCreatorRaces}>
 
                 <p>Select a Race</p>
 
-                <section className={styles.charCreatorRacesAstarian}>
+                <section style={displayNone}>
+
+                </section>
+
+                <section className={styles.charCreatorRacesAstarian} style={displayAstarianRaces} >
                     <div>
                         <h4>Goliath</h4>
                         <p>
@@ -41,11 +58,50 @@ class RaceSelect extends React.Component {
                         </p>
                     </div>
                 </section>
+
+                <section className={styles.charCreatorRacesIrian} style={displayIrianRaces}>
+                    <div>
+                        <h4>Lumian</h4>
+                        <p>
+                            Lumian, in their native tongue Light Incarnate, are beings without a physical
+                            body, but
+                            their body is a pure manifestation of the magic Force itself. The whole race
+                            has aligned
+                            themselves with the Amber Crystalborn in a meritocratic alliance,
+                            where
+                            individuals are given power based on individual achievements.
+                        </p>
+                    </div>
+
+                    <div>
+                        <img src="./files/Lumian.png" alt="" className={styles.raceImg} />
+                    </div>
+
+                    <div>
+                        <img src="./files/Crystalborn.png" alt="" className={styles.raceImg} />
+                    </div>
+
+                    <div>
+                        <h4>Crystalborn</h4>
+                        <p>
+                            The Crystalborn are lizard-like creatures with scales of pure crystal. Their hight can
+                            drastically vary between 4 to 7 feet. The Race is divided into 3
+                            subraces,
+                            with each heavily discriminating against each other. The 3 divisions are Amber
+                            (scholarly-oriented), Jade
+                            (primal tribal), Obsidian (militaristic).
+                        </p>
+                    </div>
+                </section>
             </section>
 
+
+
         )
+
     }
 }
+
 
 export default RaceSelect;
 
