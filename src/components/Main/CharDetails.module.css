@@ -43,6 +43,8 @@
     font-size: 20px;
     width: 200px;
     padding: 3px;
+    border-radius: 3px;
+    resize: none;
 }
 
 .charDetailsForm textarea {

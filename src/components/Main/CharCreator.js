@@ -1,7 +1,9 @@
 import React from "react";
+import { Route } from "react-router-dom";
 import styles from "./CharCreator.module.css";
 import RealmSelect from "./RealmSelect";
 import RaceSelect from "./RaceSelect";
+import CharDetails from "./CharDetails";
 
 class CharCreator extends React.Component {
     state = {
@@ -25,6 +27,9 @@ class CharCreator extends React.Component {
                 <RaceSelect
                     realmSelected={this.state.realmSelected}
                 />
+                <Route exact path="/character-details"> {/* This path doesn't work */}
+                    <CharDetails />
+                </Route>
             </main>
         )
     }

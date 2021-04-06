@@ -1,0 +1,34 @@
+.advDiv {
+    color: silver;
+    margin: auto;
+}
+
+.adventure {
+    width: 700px;
+    height: 200px;
+    display: flex;
+    border: 1px solid silver;
+    margin: 20px auto;
+    
+}
+
+.textWrapper {
+    width: 200px;
+    margin: 20px;
+}
+
+.imgWrapper img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.liWrapper {
+    margin: 20px;
+}
+
+.joinBtn {
+    color: skyblue;
+    border:1px solid skyblue;
+    cursor: pointer;
+}
