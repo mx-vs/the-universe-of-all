@@ -1,0 +1,16 @@
+.asideImgOne {
+    width: 535px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: -2;
+}
+
+.asideImgTwo {
+    width: 535px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: -2;
+    transform: rotateY(180deg)
+}

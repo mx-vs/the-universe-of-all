@@ -10,9 +10,9 @@ class RaceSelect extends React.Component {
         if (this.props.realmSelected === "none") {
             displayAstarianRaces.display = "none";
             displayIrianRaces.display = "none";
-        } else if(this.props.realmSelected === "astarian") {
+        } else if (this.props.realmSelected === "astarian") {
             displayIrianRaces.display = "none";
-        } else if(this.props.realmSelected === "irian") {
+        } else if (this.props.realmSelected === "irian") {
             displayAstarianRaces.display = "none";
         }
 
@@ -74,11 +74,11 @@ class RaceSelect extends React.Component {
                     </div>
 
                     <div>
-                        <img src="./files/Lumian.png" alt="" className={styles.raceImg} />
+                        <img src="https://i.imgur.com/LeQtQM3.png" alt="" className={styles.raceImg} />
                     </div>
 
                     <div>
-                        <img src="./files/Crystalborn.png" alt="" className={styles.raceImg} />
+                        <img src="https://i.imgur.com/RRGpfki.png" alt="" className={styles.raceImg} />
                     </div>
 
                     <div>

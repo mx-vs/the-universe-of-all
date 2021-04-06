@@ -4,7 +4,6 @@ import RealmSelect from "./RealmSelect";
 import RaceSelect from "./RaceSelect";
 
 class CharCreator extends React.Component {
-
     state = {
         realmSelected: "none"
     }
@@ -18,6 +17,7 @@ class CharCreator extends React.Component {
     render() {
         return (
             <main className={styles.charCreatorMain}>
+
                 <h2>Character Creator</h2>
                 <RealmSelect
                     handleRealmSelectProps={this.handleRealmSelect}
