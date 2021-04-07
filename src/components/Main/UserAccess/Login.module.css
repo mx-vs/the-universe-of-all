@@ -1,0 +1,56 @@
+.logindiv {
+    position: relative;
+    margin: auto;
+    top: 100px;
+    width: 600px;
+    border: 2px solid silver;
+    padding: 30px 30px 0px 30px;
+    color: silver;
+}
+
+.loginHeading {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+}
+
+.loginForm input {
+    background-color: white;
+    font-size: 20px;
+    height: 30px;
+    margin-bottom: 20px;
+}
+
+.loginButton {
+    width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+    z-index: -1;
+}
+
+.loginButton + label {
+    background:
+    linear-gradient(45deg, silver 50%, transparent 0) right /250% 100% no-repeat,
+    linear-gradient(45deg, transparent 50%,silver 0) left /250% 100% no-repeat;
+    transition: 0.3s;
+    text-align: center;
+    border: 1px solid;
+    color: silver;
+    height: 33.78px;
+    width: 200px;
+    padding: 3px;
+    margin: auto auto 10px auto;
+}
+
+.loginButton + label:hover {
+    background-position: center;
+    color: black;
+    cursor: pointer;
+}
