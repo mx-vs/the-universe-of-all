@@ -1,10 +1,9 @@
 .advDiv {
     color: silver;
-    margin: auto;
 }
 
 .adventure {
-    width: 700px;
+    width: 750px;
     height: 200px;
     display: flex;
     align-content: space-between;
@@ -18,10 +17,13 @@
     margin: 20px;
     z-index: 0;
 }
+.textWrapper p {
+    margin-top: 5px;
+}
 
 .imgWrapper img {
     width: 300px;
-    height: 195px;
+    height: 196px;
     object-fit: cover;
 }
 
@@ -30,12 +32,24 @@
 }
 
 .joinBtn {
-    color: skyblue;
+    color: rgb(173, 236, 193);
+    font-family: 'IM Fell DW Pica', serif;
+    font-size: 15px;
     margin-top: 50px;
     width: 130px;
     height: 30px;
-    border:1px solid skyblue;
+    border: 2px solid rgb(173, 236, 193);
+    border-radius: 3px;
     cursor: pointer;
     align-self: flex-end;
     z-index: -1;
+    background:
+        linear-gradient(45deg, silver 50%, transparent 0) right /250% 100% no-repeat,
+        linear-gradient(45deg, transparent 50%,silver 0) left /250% 100% no-repeat;
+    transition: 0.3s;
+}
+
+.joinBtn:hover {
+    background-position: center;
+    color: black;
 }

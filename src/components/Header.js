@@ -13,9 +13,8 @@ const Header = () => {
                 <ul className={styles.navUl}>
                     <Link to="/adventures" style={{textDecoration: "none"}} className={styles.navLink}><li>Adventures</li></Link>
                     <Link to="/characters" style={{textDecoration: "none"}} className={styles.navLink}><li>Characters</li></Link>
-                    <Link to="/myprofile" style={{textDecoration: "none"}} className={styles.navLink}><li>My Profile</li></Link>
-                    <Link to="/register" style={{textDecoration: "none"}} className={styles.navLink}><li>Register</li></Link>
-                    <Link to="/login" style={{textDecoration: "none"}} className={styles.navLink}><li>Login</li></Link>
+                    <Link to="/my-profile" style={{textDecoration: "none"}} className={styles.navLink}><li>My Profile</li></Link>
+                    <Link to="/user-access" style={{textDecoration: "none"}} className={styles.navLink}><li>Register/Login</li></Link>
                 </ul>
             </nav>
         </header>
