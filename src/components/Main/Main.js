@@ -3,8 +3,9 @@ import { Switch, Route } from "react-router-dom";
 import { } from "./Main.module.css";
 import Home from "./Home";
 import CharCreator from "./CharCreator";
-import Adventures from "./Adventures";
 import CharDetails from "./CharDetails";
+import Adventures from "./Adventures";
+import UserAccess from "./UserAccess/UserAccess"
 
 class Main extends React.Component {
     render() {
@@ -27,12 +28,8 @@ class Main extends React.Component {
                         <Adventures />
                     </Route>
 
-                    <Route exact path="/characters">
-
-                    </Route>
-
-                    <Route exact path="/characters">
-
+                    <Route exact path="/user-access">
+                        <UserAccess />
                     </Route>
                 </Switch>
             </main>
