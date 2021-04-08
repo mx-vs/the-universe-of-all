@@ -1,5 +1,6 @@
 import React from "react";
-import styles from "./RaceSelect.module.css"
+import { Link } from "react-router-dom";
+import styles from "./RaceSelect.module.css";
 
 class RaceSelect extends React.Component {
     render() {
@@ -40,11 +41,11 @@ class RaceSelect extends React.Component {
                     </div>
 
                     <div>
-                        <img src="https://i.imgur.com/88IrDbe.jpg" alt="" className={styles.raceImg} />
+                        <Link to="./character-details"><img src="https://i.imgur.com/88IrDbe.jpg" alt="" className={styles.raceImg} /></Link>
                     </div>
 
                     <div>
-                        <img src="https://i.imgur.com/VmYg0Zl.jpg" alt="" className={styles.raceImg} />
+                        <Link to="./character-details"><img src="https://i.imgur.com/VmYg0Zl.jpg" alt="" className={styles.raceImg} /></Link>
                     </div>
 
                     <div>
@@ -74,11 +75,11 @@ class RaceSelect extends React.Component {
                     </div>
 
                     <div>
-                        <img src="https://i.imgur.com/LeQtQM3.png" alt="" className={styles.raceImg} />
+                        <Link to="./character-details"><img src="https://i.imgur.com/LeQtQM3.png" alt="" className={styles.raceImg} /></Link>
                     </div>
 
                     <div>
-                        <img src="https://i.imgur.com/RRGpfki.png" alt="" className={styles.raceImg} />
+                        <Link to="./character-details"><img src="https://i.imgur.com/RRGpfki.png" alt="" className={styles.raceImg} /></Link>
                     </div>
 
                     <div>

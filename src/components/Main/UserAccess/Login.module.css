@@ -3,6 +3,7 @@
     margin: auto;
     top: 100px;
     width: 600px;
+    height: 300px;
     border: 2px solid silver;
     padding: 30px 30px 0px 30px;
     color: silver;
@@ -21,6 +22,7 @@
 
 .loginForm input {
     background-color: white;
+    font-family: 'IM Fell DW Pica', serif;
     font-size: 20px;
     height: 30px;
     margin-bottom: 20px;

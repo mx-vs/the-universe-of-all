@@ -13,7 +13,9 @@ const Main = (props) => {
         <main>
             <Switch>
                 <Route exact path="/">
-                    <Home />
+                    <Home
+                        userEmail={props.userEmail}
+                    />
                 </Route>
 
                 <Route exact path="/character-creator">
@@ -29,13 +31,14 @@ const Main = (props) => {
                 </Route>
 
                 <Route exact path="/register">
-                    <Register />
+                    <Register 
+                        userEmail={props.userEmail}
+                        setUserEmail={props.setUserEmail}
+                    />
                 </Route>
 
                 <Route exact path="/login">
                     <Login
-                        //setLoginStatus={props.setLoginStatus}
-                        //userSignedIn={props.userSignedIn}
                         userEmail={props.userEmail}
                         setUserEmail={props.setUserEmail}
                     />

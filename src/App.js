@@ -10,11 +10,12 @@ import Footer from './components/Footer';
 
 const App = () => {
   let history = useHistory();
-  const [userEmail, setUserEmail] = useState(null);
+  const [userEmail, setUserEmail] = useState(localStorage.getItem("currentUser"));
 
   const logOut = () => {
     firebase.auth().signOut().then(() => {
       setUserEmail(null);
+      localStorage.removeItem("currentUser");
       history.push("/");
     });
   }

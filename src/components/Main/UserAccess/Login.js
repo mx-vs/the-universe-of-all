@@ -5,7 +5,6 @@ import { useHistory } from "react-router-dom";
 
 const Login = (props) => {
     let history = useHistory();
-    const user = firebase.auth().currentUser;
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -15,7 +14,7 @@ const Login = (props) => {
         event.preventDefault();
         firebase.auth().signInWithEmailAndPassword(email, password)
             .then((userCredential) => {
-                //props.setLoginStatus(user);
+                localStorage.setItem("currentUser", email);
                 props.setUserEmail(email);
                 history.push("/");
             });

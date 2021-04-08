@@ -3,6 +3,7 @@
     margin: auto;
     top: 100px;
     width: 600px;
+    height: 400px;
     border: 2px solid silver;
     padding: 30px 30px 0px 30px;
     color: silver;
@@ -21,6 +22,7 @@
 
 .registerForm input {
     background-color: white;
+    font-family: 'IM Fell DW Pica', serif;
     font-size: 20px;
     height: 30px;
     margin-bottom: 20px;
@@ -59,6 +61,7 @@
 
 .linkToLoginBtn {
     margin-left: 20px;
+    margin-top: 30px;
     width: 150px;
     height: 30px;
     font-family: 'IM Fell DW Pica', serif;

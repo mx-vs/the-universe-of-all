@@ -3,7 +3,7 @@ import styles from "./Register.module.css";
 import firebase from "../../../services/firebase";
 import { useHistory, Link } from "react-router-dom";
 
-const Register = () => {
+const Register = (props) => {
     let history = useHistory();
 
     const [email, setEmail] = useState("");
@@ -14,6 +14,7 @@ const Register = () => {
         event.preventDefault();
         firebase.auth().createUserWithEmailAndPassword(email, password)
             .then((userCredential) => {
+                props.setUserEmail(email);
                 history.push("/");
             });
     };

@@ -3,10 +3,17 @@ import { Link } from 'react-router-dom'
 import styles from "./Home.module.css";
 import ButtonCreateChar from "./ButtonCreateChar";
 
-const Home = () => {
+const Home = (props) => {
     return (
         <div className={styles.homeDiv}>
-            <ButtonCreateChar />
+            {props.userEmail
+                ? <ButtonCreateChar />
+                : <Link
+                    to="/register"
+                    style={{ textDecoration: "none" }}>
+                    <h1 className={styles.message}>Please Register or Login to Create Character</h1>
+                </Link>
+            }
 
             <p>
                 A cosmic entity beyond mortal imagination, refered simply by the wise as All, is said to be the creator of
