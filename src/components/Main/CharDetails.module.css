@@ -55,6 +55,15 @@
     width: 35px;
 }
 
+select {
+    background-color: white;
+    font-family: 'IM Fell DW Pica', serif;
+    border-radius: 3px;
+    height: 35px;
+    font-size: 20px;
+    width: 200px;
+}
+
 .charDetailsButtons  {
     flex-direction: row !important;
     justify-content: center !important;
