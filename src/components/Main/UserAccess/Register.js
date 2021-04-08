@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./Register.module.css";
 import firebase from "../../../services/firebase";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 
 const Register = () => {
     let history = useHistory();
@@ -29,7 +29,7 @@ const Register = () => {
 
     return (
         <div className={styles.registerdiv}>
-            <h2 className={styles.registerHeading}>Sign Up</h2>
+            <h2 className={styles.registerText}>Sign Up</h2>
             <form action="" className={styles.registerForm}>
                 <label htmlFor="email">Email:</label>
                 <input
@@ -53,6 +53,9 @@ const Register = () => {
                     }} />
                 <label htmlFor="registerbtn">Register</label>
             </form>
+
+            <h3 className={styles.registerText}>If you already have an account<Link to="/login"><button className={styles.linkToLoginBtn}> Sign In</button></Link></h3>
+            
         </div>
     )
 }

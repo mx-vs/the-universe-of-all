@@ -3,8 +3,9 @@ import styles from "./Login.module.css";
 import firebase from "../../../services/firebase";
 import { useHistory } from "react-router-dom";
 
-const Login = () => {
+const Login = (props) => {
     let history = useHistory();
+    const user = firebase.auth().currentUser;
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -14,6 +15,8 @@ const Login = () => {
         event.preventDefault();
         firebase.auth().signInWithEmailAndPassword(email, password)
             .then((userCredential) => {
+                //props.setLoginStatus(user);
+                props.setUserEmail(email);
                 history.push("/");
             });
     };

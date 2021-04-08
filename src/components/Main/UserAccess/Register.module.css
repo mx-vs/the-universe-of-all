@@ -8,7 +8,7 @@
     color: silver;
 }
 
-.registerHeading {
+.registerText {
     text-align: center;
     margin-bottom: 20px;
 }
@@ -35,7 +35,8 @@
     z-index: -1;
 }
 
-.regButton + label {
+.regButton + label,
+.linkToLoginBtn {
     background:
     linear-gradient(45deg, silver 50%, transparent 0) right /250% 100% no-repeat,
     linear-gradient(45deg, transparent 50%,silver 0) left /250% 100% no-repeat;
@@ -49,8 +50,17 @@
     margin: auto auto 10px auto;
 }
 
-.regButton + label:hover {
+.regButton + label:hover,
+.linkToLoginBtn:hover {
     background-position: center;
     color: black;
     cursor: pointer;
+}
+
+.linkToLoginBtn {
+    margin-left: 20px;
+    width: 150px;
+    height: 30px;
+    font-family: 'IM Fell DW Pica', serif;
+    font-size: 18px;
 }

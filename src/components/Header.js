@@ -2,34 +2,26 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Header.module.css";
 import firebase from "../services/firebase";
-import { useHistory } from "react-router-dom";
 
-const Header = () => {
-    let history = useHistory();
-    const user = firebase.auth().currentUser;
-
-    const logOut = () => {
-        firebase.auth().signOut().then(() => {
-            alert("See you soon")
-            history.push("/");
-        });
-    }
+const Header = (props) => {
+    const regex = /.+?(?=@)/g;
+    let user = regex.exec(props.userEmail);
 
     const dependantButtons = () => {
-        if (user === "null") {
+        if (props.userEmail === null) {
             return (
                 <Link
-                    to="/user-access"
+                    to="/register"
                     style={{ textDecoration: "none" }}
                     className={styles.navLink}>
-                    <li>Register/Login</li>
+                    <li>Register</li>
                 </Link>)
         } else {
             return (
                 <li
                     style={{ textDecoration: "none" }}
                     className={styles.navLink}
-                    onClick={logOut}>
+                    onClick={props.logOut}>
                     Logout
                 </li>
             )
@@ -64,7 +56,7 @@ const Header = () => {
                         to="/my-profile"
                         style={{ textDecoration: "none" }}
                         className={styles.navLink}>
-                        <li>My Profile</li>
+                        <li>{user ? user + "'s" : "My"} Profile</li>
                     </Link>
                     {dependantButtons()}
                 </ul>
