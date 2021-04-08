@@ -25,6 +25,7 @@ class CharCreator extends React.Component {
                 />
                 <RaceSelect
                     realmSelected={this.state.realmSelected}
+                    setRace={this.props.setRace}
                 />
             </main>
         )

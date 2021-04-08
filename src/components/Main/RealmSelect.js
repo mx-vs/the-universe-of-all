@@ -4,7 +4,6 @@ import styles from "./RealmSelect.module.css";
 class RealmSelect extends React.Component {
 
     render() {
-
         return (
             <div>
                 <p>Select a Realm to begin your adventure</p>

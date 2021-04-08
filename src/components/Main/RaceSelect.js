@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import styles from "./RaceSelect.module.css";
 
 class RaceSelect extends React.Component {
+
+    const 
     render() {
         let displayNone = {};
         let displayAstarianRaces = {};

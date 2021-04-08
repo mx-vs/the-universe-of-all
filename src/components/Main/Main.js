@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Switch, Route } from "react-router-dom";
 import { } from "./Main.module.css";
 import Home from "./Home";
@@ -9,6 +9,8 @@ import Register from "./UserAccess/Register"
 import Login from "./UserAccess/Login"
 
 const Main = (props) => {
+    const [race, setRace] = useState("");
+
     return (
         <main>
             <Switch>
@@ -19,11 +21,15 @@ const Main = (props) => {
                 </Route>
 
                 <Route exact path="/character-creator">
-                    <CharCreator />
+                    <CharCreator
+                        setRace={setRace}
+                    />
                 </Route>
 
                 <Route exact path="/character-details">
-                    <CharDetails />
+                    <CharDetails
+                        race={race}
+                    />
                 </Route>
 
                 <Route exact path="/adventures">
@@ -31,7 +37,7 @@ const Main = (props) => {
                 </Route>
 
                 <Route exact path="/register">
-                    <Register 
+                    <Register
                         userEmail={props.userEmail}
                         setUserEmail={props.setUserEmail}
                     />
