@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styles from "./CharDetails.module.css";
 import firebase from "../../services/firebase";
 import "@firebase/firestore";
-import { useHistory } from "react-router-dom";
+import { useHistory, Prompt } from "react-router-dom";
 
 const CharDetails = (props) => {
     let history = useHistory();
@@ -25,9 +25,10 @@ const CharDetails = (props) => {
     );
 
     const [name, setName] = useState("");
-    const [raceDnd, setRaceDnd] = useState("");
+    const raceDnd = props.race;
     const [classNameDND, setClassNameDND] = useState("Barbarian");
     const [alignment, setAlignment] = useState("Chaotic");
+    const [imageUrl, setImageUrl] = useState("");
     const [str, setStr] = useState("");
     const [dex, setDex] = useState("");
     const [con, setCon] = useState("");
@@ -44,6 +45,7 @@ const CharDetails = (props) => {
             raceDnd: raceDnd,
             classNameDND: classNameDND,
             alignment: alignment,
+            imageUrl: imageUrl,
             str: str,
             dex: dex,
             con: con,
@@ -66,12 +68,13 @@ const CharDetails = (props) => {
                 <h4>Details</h4>
             </section>
 
+            <Prompt when={!name || !imageUrl || !str || !con || !wis || !cha || !desc || !features} message="Your character is not saved! Would you like to exit this page?" />
             <form onSubmit={saveCharToDatabase} className={styles.charDetailsForm}>
                 <section className={styles.charDetailsSection}>
                     <label htmlFor="name">Name:</label>
-                    <input type="text" id="name" name="name" value={name} onChange={e => setName(e.target.value)} />
+                    <input type="text" id="name" name="name" value={name} onChange={e => setName(e.target.value)} required />
                     <label htmlFor="race">Race:</label>
-                    <input type="text" id="race" name="race" value={raceDnd} onChange={e => setRaceDnd(e.target.value)} />
+                    <input type="text" id="race" name="race" value={raceDnd} readOnly />
                     <label htmlFor="classNameDND">Class:</label>
                     <select id="classNameDND" name="classNameDND" value={classNameDND} onChange={e => setClassNameDND(e.target.value)}>
                         {optionsClasses}
@@ -83,33 +86,33 @@ const CharDetails = (props) => {
                         <option>Lawful</option>
                         <option>Evil</option>
                     </select>
+                    <label htmlFor="imageUrl">ImageURL:</label>
+                    <input type="text" id="imageUrl" name="imageUrl" value={imageUrl} onChange={e => setImageUrl(e.target.value)} required />
                 </section>
 
                 <section className={styles.charDetailsSection}>
                     <label htmlFor="str">Strength:</label>
-                    <input type="number" id={styles.str} name="str" value={str} onChange={e => setStr(e.target.value)} />
+                    <input type="number" id={styles.str} name="str" value={str} onChange={e => setStr(e.target.value)} required />
                     <label htmlFor="dex">Dexterity:</label>
-                    <input type="number" id={styles.dex} name="dex" value={dex} onChange={e => setDex(e.target.value)} />
+                    <input type="number" id={styles.dex} name="dex" value={dex} onChange={e => setDex(e.target.value)} required />
                     <label htmlFor="con">Constitution:</label>
-                    <input type="number" id={styles.con} name="con" value={con} onChange={e => setCon(e.target.value)} />
+                    <input type="number" id={styles.con} name="con" value={con} onChange={e => setCon(e.target.value)} required />
                     <label htmlFor="int">Intelligence:</label>
-                    <input type="number" id={styles.int} name="int" value={int} onChange={e => setInt(e.target.value)} />
+                    <input type="number" id={styles.int} name="int" value={int} onChange={e => setInt(e.target.value)} required />
                     <label htmlFor="wis">Wisdom:</label>
-                    <input type="number" id={styles.wis} name="wis" value={wis} onChange={e => setWis(e.target.value)} />
+                    <input type="number" id={styles.wis} name="wis" value={wis} onChange={e => setWis(e.target.value)} required />
                     <label htmlFor="cha">Charisma:</label>
-                    <input type="number" id={styles.cha} name="cha" value={cha} onChange={e => setCha(e.target.value)} />
+                    <input type="number" id={styles.cha} name="cha" value={cha} onChange={e => setCha(e.target.value)} required />
                 </section>
 
                 <section className={styles.charDetailsSection}>
                     <label htmlFor="desc">Description:</label>
-                    <textarea type="text" id="desc" name="desc" rows="4" value={desc} onChange={e => setDesc(e.target.value)}></textarea>
+                    <textarea type="text" id="desc" name="desc" rows="4" value={desc} onChange={e => setDesc(e.target.value)} required></textarea>
                     <label htmlFor="features">Features & Traits:</label>
-                    <textarea type="text" id="features" name="features" rows="4" value={features} onChange={e => setFeatures(e.target.value)}></textarea>
+                    <textarea type="text" id="features" name="features" rows="4" value={features} onChange={e => setFeatures(e.target.value)} required></textarea>
                 </section>
 
                 <section className={styles.charDetailsButtons}>
-                    <input type="file" id="img" name="img" accept="image/*" className={styles.uploadImgButton} />
-                    <label htmlFor="img">Choose an Image</label>
                     <input type="button" id="rollbtn" name="rollbtn" className={styles.rollButton} onClick={() => window.open("https://rgbstudios.org/dnd-dice/char?r=#")} />
                     <label htmlFor="rollbtn">Roll Attributes</label>
                     <input type="submit" id="savebtn" name="savebtn" className={styles.saveButton} />

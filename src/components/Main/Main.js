@@ -5,6 +5,7 @@ import Home from "./Home";
 import CharCreator from "./CharCreator";
 import CharDetails from "./CharDetails";
 import Adventures from "./Adventures";
+import MyProfile from "./MyProfile";
 import Register from "./UserAccess/Register"
 import Login from "./UserAccess/Login"
 
@@ -22,6 +23,7 @@ const Main = (props) => {
 
                 <Route exact path="/character-creator">
                     <CharCreator
+                        race={race}
                         setRace={setRace}
                     />
                 </Route>
@@ -29,11 +31,16 @@ const Main = (props) => {
                 <Route exact path="/character-details">
                     <CharDetails
                         race={race}
+                        setRace={setRace}
                     />
                 </Route>
 
                 <Route exact path="/adventures">
                     <Adventures />
+                </Route>
+
+                <Route exact path="/my-profile">
+                    <MyProfile />
                 </Route>
 
                 <Route exact path="/register">

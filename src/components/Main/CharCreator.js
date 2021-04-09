@@ -1,5 +1,4 @@
 import React from "react";
-import { BrowserRouter, Route } from "react-router-dom";
 import styles from "./CharCreator.module.css";
 import RealmSelect from "./RealmSelect";
 import RaceSelect from "./RaceSelect";
@@ -25,6 +24,7 @@ class CharCreator extends React.Component {
                 />
                 <RaceSelect
                     realmSelected={this.state.realmSelected}
+                    race={this.props.race}
                     setRace={this.props.setRace}
                 />
             </main>

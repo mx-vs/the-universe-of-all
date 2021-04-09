@@ -1,44 +1,58 @@
-.advDiv {
+.myProfileDiv {
     color: silver;
-}
-
-.adventure {
     width: 750px;
-    height: 200px;
+    height: 320px;
     display: flex;
-    align-content: space-between;
+    flex-direction: column;
     border: 2px solid silver;
     border-radius: 3px;
     margin: 20px auto;
 }
 
-.textWrapper {
-    width: 250px;
+.char {
+    display: flex;
+    align-content: space-between;
+
+}
+
+.charTextWrapper {
+    width: 300px;
     margin: 20px;
     z-index: 0;
 }
-.textWrapper p {
+.charTextWrapper p {
     margin-top: 5px;
 }
 
-.imgWrapper img {
-    width: 300px;
-    height: 196px;
+.charImgWrapper img {
+    width: 250px;
+    height: 160px;
     object-fit: cover;
+    border-radius: 3px;
 }
 
-.liWrapper {
+.attributesLiWrapper {
     margin: 20px;
 }
 
-.joinBtn {
-    color: silver;
+.charDetailsWrapper {
+    display: flex;
+}
+
+.charDetailsWrapper p {
+    width: 400px;
+    margin: 10px;
+}
+
+.btn {
+    color: rgb(173, 236, 193);
     font-family: 'IM Fell DW Pica', serif;
     font-size: 15px;
-    margin-top: 50px;
+    margin-top: 20px;
+    margin-left: 20px;
     width: 130px;
     height: 30px;
-    border: 2px solid silver;
+    border: 2px solid rgb(173, 236, 193);
     border-radius: 3px;
     cursor: pointer;
     align-self: flex-end;
@@ -49,7 +63,7 @@
     transition: 0.3s;
 }
 
-.joinBtn:hover {
+.btn:hover {
     background-position: center;
     color: black;
 }

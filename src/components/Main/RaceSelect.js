@@ -43,11 +43,11 @@ class RaceSelect extends React.Component {
                     </div>
 
                     <div>
-                        <Link to="./character-details"><img src="https://i.imgur.com/88IrDbe.jpg" alt="" className={styles.raceImg} /></Link>
+                        <Link to="./character-details"><img src="https://i.imgur.com/88IrDbe.jpg" alt="" className={styles.raceImg} onClick={() => {this.props.setRace("Goliath")}}/></Link>
                     </div>
 
                     <div>
-                        <Link to="./character-details"><img src="https://i.imgur.com/VmYg0Zl.jpg" alt="" className={styles.raceImg} /></Link>
+                        <Link to="./character-details"><img src="https://i.imgur.com/VmYg0Zl.jpg" alt="" className={styles.raceImg} onClick={() => {this.props.setRace("Vampirian")}}/></Link>
                     </div>
 
                     <div>
@@ -77,11 +77,11 @@ class RaceSelect extends React.Component {
                     </div>
 
                     <div>
-                        <Link to="./character-details"><img src="https://i.imgur.com/LeQtQM3.png" alt="" className={styles.raceImg} /></Link>
+                        <Link to="./character-details"><img src="https://i.imgur.com/LeQtQM3.png" alt="" className={styles.raceImg} onClick={() => {this.props.setRace("Lumian")}}/></Link>
                     </div>
 
                     <div>
-                        <Link to="./character-details"><img src="https://i.imgur.com/RRGpfki.png" alt="" className={styles.raceImg} /></Link>
+                        <Link to="./character-details"><img src="https://i.imgur.com/RRGpfki.png" alt="" className={styles.raceImg} onClick={() => {this.props.setRace("Crystalborn")}}/></Link>
                     </div>
 
                     <div>

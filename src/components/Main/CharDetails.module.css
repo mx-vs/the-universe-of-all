@@ -71,7 +71,6 @@ select {
     margin: 30px !important;
 }
 
-.uploadImgButton,
 .rollButton,
 .saveButton {
     width: 0.1px;
@@ -82,7 +81,6 @@ select {
 	z-index: -1;
 }
 
-.uploadImgButton + label,
 .rollButton + label,
 .saveButton + label {
     background:
@@ -97,7 +95,6 @@ select {
     padding: 3px;
 }
 
-.uploadImgButton +label:hover,
 .rollButton + label:hover,
 .saveButton +label:hover {
     background-position: center;
