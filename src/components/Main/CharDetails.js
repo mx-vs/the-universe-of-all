@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
 import styles from "./CharDetails.module.css";
 import firebase from "../../services/firebase";
-import { v4 as uuidv4 } from "uuid";
+import "@firebase/firestore";
+import { useHistory } from "react-router-dom";
 
 const CharDetails = (props) => {
+    let history = useHistory();
     let [classes, setClasses] = useState([]);
 
     useEffect(() => {
         let fetchedClasses = [];
-        let fetchedEquipment = [];
         fetch("https://www.dnd5eapi.co/api/classes")
             .then(res => res.json())
             .then(data => {
@@ -23,7 +24,39 @@ const CharDetails = (props) => {
         <option key={classDnd}>{classDnd}</option>
     );
 
-    const [input, setInput] = useState();
+    const [name, setName] = useState("");
+    const [raceDnd, setRaceDnd] = useState("");
+    const [classNameDND, setClassNameDND] = useState("Barbarian");
+    const [alignment, setAlignment] = useState("Chaotic");
+    const [str, setStr] = useState("");
+    const [dex, setDex] = useState("");
+    const [con, setCon] = useState("");
+    const [int, setInt] = useState("");
+    const [wis, setWis] = useState("");
+    const [cha, setCha] = useState("");
+    const [desc, setDesc] = useState("");
+    const [features, setFeatures] = useState("");
+
+    const saveCharToDatabase = (event) => {
+        event.preventDefault();
+        firebase.firestore().collection("chars").add({
+            name: name,
+            raceDnd: raceDnd,
+            classNameDND: classNameDND,
+            alignment: alignment,
+            str: str,
+            dex: dex,
+            con: con,
+            int: int,
+            wis: wis,
+            cha: cha,
+            desc: desc,
+            features: features
+        }).then(() => {
+            alert("Character has been created! You can now join adventures")
+            history.push("/adventures");
+        })
+    }
 
     return (
         <main className={styles.charDetailsMain}>
@@ -33,18 +66,18 @@ const CharDetails = (props) => {
                 <h4>Details</h4>
             </section>
 
-            <form action="" className={styles.charDetailsForm}>
+            <form onSubmit={saveCharToDatabase} className={styles.charDetailsForm}>
                 <section className={styles.charDetailsSection}>
                     <label htmlFor="name">Name:</label>
-                    <input type="text" id="name" name="name" onChange={e => setInput(e.target.value)} />
+                    <input type="text" id="name" name="name" value={name} onChange={e => setName(e.target.value)} />
                     <label htmlFor="race">Race:</label>
-                    <input type="text" id="race" name="race" onChange={e => setInput(e.target.value)} />
+                    <input type="text" id="race" name="race" value={raceDnd} onChange={e => setRaceDnd(e.target.value)} />
                     <label htmlFor="classNameDND">Class:</label>
-                    <select id="classNameDND" name="classNameDND" onChange={e => setInput(e.target.value)}>
+                    <select id="classNameDND" name="classNameDND" value={classNameDND} onChange={e => setClassNameDND(e.target.value)}>
                         {optionsClasses}
                     </select>
                     <label htmlFor="alignment">Alignment:</label>
-                    <select id="alignment" name="alignment" onChange={e => setInput(e.target.value)}>
+                    <select id="alignment" name="alignment" value={alignment} onChange={e => setAlignment(e.target.value)}>
                         <option>Chaotic</option>
                         <option>Neutral</option>
                         <option>Lawful</option>
@@ -54,24 +87,24 @@ const CharDetails = (props) => {
 
                 <section className={styles.charDetailsSection}>
                     <label htmlFor="str">Strength:</label>
-                    <input type="number" id={styles.str} name="str" onChange={e => setInput(e.target.value)} />
+                    <input type="number" id={styles.str} name="str" value={str} onChange={e => setStr(e.target.value)} />
                     <label htmlFor="dex">Dexterity:</label>
-                    <input type="number" id={styles.dex} name="dex" onChange={e => setInput(e.target.value)} />
+                    <input type="number" id={styles.dex} name="dex" value={dex} onChange={e => setDex(e.target.value)} />
                     <label htmlFor="con">Constitution:</label>
-                    <input type="number" id={styles.con} name="con" onChange={e => setInput(e.target.value)} />
+                    <input type="number" id={styles.con} name="con" value={con} onChange={e => setCon(e.target.value)} />
                     <label htmlFor="int">Intelligence:</label>
-                    <input type="number" id={styles.int} name="int" onChange={e => setInput(e.target.value)} />
+                    <input type="number" id={styles.int} name="int" value={int} onChange={e => setInt(e.target.value)} />
                     <label htmlFor="wis">Wisdom:</label>
-                    <input type="number" id={styles.wis} name="wis" onChange={e => setInput(e.target.value)} />
+                    <input type="number" id={styles.wis} name="wis" value={wis} onChange={e => setWis(e.target.value)} />
                     <label htmlFor="cha">Charisma:</label>
-                    <input type="number" id={styles.cha} name="cha" onChange={e => setInput(e.target.value)} />
+                    <input type="number" id={styles.cha} name="cha" value={cha} onChange={e => setCha(e.target.value)} />
                 </section>
 
                 <section className={styles.charDetailsSection}>
                     <label htmlFor="desc">Description:</label>
-                    <textarea type="text" id="desc" name="desc" rows="4" onChange={e => setInput(e.target.value)}></textarea>
+                    <textarea type="text" id="desc" name="desc" rows="4" value={desc} onChange={e => setDesc(e.target.value)}></textarea>
                     <label htmlFor="features">Features & Traits:</label>
-                    <textarea type="text" id="features" name="features" rows="4" onChange={e => setInput(e.target.value)}></textarea>
+                    <textarea type="text" id="features" name="features" rows="4" value={features} onChange={e => setFeatures(e.target.value)}></textarea>
                 </section>
 
                 <section className={styles.charDetailsButtons}>
