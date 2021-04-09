@@ -1,39 +1,44 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./MyProfile.module.css";
+import firebase from "../../services/firebase";
+import SingleCharRender from "./SingleCharRender";
 
-const MyProfile = () => {
+const MyProfile = (props) => {
+
+    /* let [userChar, setUserChar] = useState([]);
+
+    useEffect(() => {
+        firebase.firestore().collection(props.userEmail).get()
+            .then((querySnapshot) => {
+                querySnapshot.forEach((doc) => {
+                    setUserChar({
+                        id: doc.id,
+                        name: doc.data().name,
+                        race: doc.data().raceDnd,
+                        classNameDND: doc.data().classNameDND,
+                        alignment: doc.data().alignment,
+                        imageUrl: doc.data().imageUrl,
+                        str: doc.data().str,
+                        dex: doc.data().dex,
+                        con: doc.data().con,
+                        int: doc.data().int,
+                        wis: doc.data().wis,
+                        cha: doc.data().cha,
+                        desc: doc.data().desc,
+                        features: doc.data().features
+                    })
+                });
+            });
+    }, []);
+
+    console.log(userChar); */
+    
+
     return (
-        <div className={styles.myProfileDiv}>
-            <section className={styles.char}>
-                <section className={styles.charImgWrapper}>
-                    <img src="https://i.imgur.com/SNKjRNV.jpeg" alt="" className="" />
-                </section>
-                <section className={styles.charTextWrapper}>
-                    <h3 id="name">Name</h3>
-                    <p>Race: Placeholder</p>
-                    <p>Class: Placeholder</p>
-                    <p>Alignment: Placeholder</p>
-                </section>
-                <ul className={styles.attributesLiWrapper}>
-                    <h4>Attributes</h4>
-                    <li>Strenght:</li>
-                    <li>Dexterity:</li>
-                    <li>Constitution:</li>
-                    <li>Intelligence:</li>
-                    <li>Wisdom:</li>
-                    <li>Charisma:</li>
-                </ul>
-                <section>
-                    <button className={styles.btn}>Edit Character</button>
-                    <button className={styles.btn}>Delete Character</button>
-                    <button className={styles.btn}>Print Character</button>
-                </section>
-            </section>
-            <section className={styles.charDetailsWrapper}>
-                <p>Description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-                <p>Features & Traits: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-            </section>
-        </div>
+            <SingleCharRender
+                userEmail={props.userEmail}
+                setUserEmail={props.setUserEmail}
+            />
     )
 }
 

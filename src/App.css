@@ -5,7 +5,7 @@ html {
     box-sizing: border-box;
     font-family: 'IM Fell DW Pica', serif;
     color: rgb(41, 29, 20);
-    overflow-y: hidden;
+    overflow-y: scroll;
 }
 
 *,

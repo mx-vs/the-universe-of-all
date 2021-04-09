@@ -24,6 +24,7 @@ const CharDetails = (props) => {
         <option key={classDnd}>{classDnd}</option>
     );
 
+    const currentUser = props.userEmail;
     const [name, setName] = useState("");
     const raceDnd = props.race;
     const [classNameDND, setClassNameDND] = useState("Barbarian");
@@ -40,7 +41,7 @@ const CharDetails = (props) => {
 
     const saveCharToDatabase = (event) => {
         event.preventDefault();
-        firebase.firestore().collection("chars").add({
+        firebase.firestore().collection(currentUser).add({
             name: name,
             raceDnd: raceDnd,
             classNameDND: classNameDND,

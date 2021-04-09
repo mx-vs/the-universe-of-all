@@ -30,6 +30,7 @@ const Main = (props) => {
 
                 <Route exact path="/character-details">
                     <CharDetails
+                        userEmail={props.userEmail}
                         race={race}
                         setRace={setRace}
                     />
@@ -40,7 +41,10 @@ const Main = (props) => {
                 </Route>
 
                 <Route exact path="/my-profile">
-                    <MyProfile />
+                    <MyProfile
+                        userEmail={props.userEmail}
+                        setUserEmail={props.setUserEmail}
+                    />
                 </Route>
 
                 <Route exact path="/register">
