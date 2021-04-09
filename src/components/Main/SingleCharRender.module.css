@@ -1,7 +1,7 @@
 .myProfileDiv {
     color: silver;
     width: 750px;
-    height: 320px;
+    height: 300px;
     display: flex;
     flex-direction: column;
     border: 2px solid silver;
