@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import styles from "./UserCharRender.module.css";
 import firebase from "../../services/firebase";
+import { useHistory } from "react-router-dom";
 
 const UserCharRender = (props) => {
     let [userChar, setUserChar] = useState([]);
+    const history = useHistory();
 
     useEffect(() => {
         const tempArr = [];
@@ -32,7 +34,7 @@ const UserCharRender = (props) => {
     }, []);
 
     const displayUserChars = userChar.map((char) => (
-        <div className={styles.myProfileDiv} key={char.id}>
+        <div className={styles.myProfileDiv} key={char.charId}>
             <section className={styles.char}>
                 <section className={styles.charImgWrapper}>
                     <img src={char.imageUrl} alt="" className="" />
@@ -54,7 +56,12 @@ const UserCharRender = (props) => {
                 </ul>
                 <section>
                     <button className={styles.btn}>Edit Character</button>
-                    <button className={styles.btn}>Delete Character</button>
+                    <button className={styles.btn} onClick={() => {
+                            firebase.firestore().collection(props.userEmail).doc(char.charId).delete().then(() => {
+                                alert("Character successfully deleted!");
+                                history.push("/");
+                            }); 
+                    }}>Delete Character</button>
                 </section>
             </section>
             <section className={styles.charDetailsWrapper}>

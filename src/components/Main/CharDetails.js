@@ -56,8 +56,8 @@ const CharDetails = (props) => {
             desc: desc,
             features: features
         }).then(() => {
-            alert("Character has been created! You can now join adventures")
-            history.push("/adventures");
+            alert("Character has been created! You will now be redirected to your characters page!")
+            history.push("/my-characters");
         })
     }
 
@@ -114,7 +114,10 @@ const CharDetails = (props) => {
                 </section>
 
                 <section className={styles.charDetailsButtons}>
-                    <input type="button" id="rollbtn" name="rollbtn" className={styles.rollButton} onClick={() => window.open("https://rgbstudios.org/dnd-dice/char?r=#")} />
+                    <input type="button" id="rollbtn" name="rollbtn" className={styles.rollButton} onClick={() => {
+                        alert("This will open a third party website in a new tab!");
+                        window.open("https://rgbstudios.org/dnd-dice/char?r=#");
+                    }} />
                     <label htmlFor="rollbtn">Roll Attributes</label>
                     <input type="submit" id="savebtn" name="savebtn" className={styles.saveButton} />
                     <label htmlFor="savebtn">Save Character</label>
