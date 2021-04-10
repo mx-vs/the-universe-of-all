@@ -7,17 +7,8 @@ const Register = (props) => {
     let history = useHistory();
 
     const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [error, setError] = useState(null);
-
-    const createUserWithEmailAndPasswordHandler = (event, email, password) => {
-        event.preventDefault();
-        firebase.auth().createUserWithEmailAndPassword(email, password)
-            .then((userCredential) => {
-                props.setUserEmail(email);
-                history.push("/");
-            });
-    };
+    let [password, setPassword] = useState("");
+    let [repeatPassword, setRepeatPassword] = useState("");
 
     const onChangeHandler = event => {
         const { name, value } = event.currentTarget;
@@ -25,6 +16,30 @@ const Register = (props) => {
             setEmail(value);
         } else if (name === "password") {
             setPassword(value);
+        } else if (name === "repeatPassword") {
+            setRepeatPassword(value);
+        }
+    };
+
+    const createUserWithEmailAndPasswordHandler = (event, email, password) => {
+        event.preventDefault();
+        if (repeatPassword !== password) {
+            alert("Passwords do not match!")
+            setPassword(null);
+            setRepeatPassword (null);
+        } else {
+            firebase.auth().createUserWithEmailAndPassword(email, password)
+                .then((userCredential) => {
+                    props.setUserEmail(email);
+                    history.push("/");
+                })
+                .catch(function (error) {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    if (errorCode) {
+                        alert(errorMessage);
+                    }
+                })
         }
     };
 
@@ -37,13 +52,22 @@ const Register = (props) => {
                     type="email"
                     id="email"
                     name="email"
-                    onChange={event => onChangeHandler(event)} />
+                    onChange={event => onChangeHandler(event)} 
+                    required />
                 <label htmlFor="password">Password:</label>
                 <input
                     type="password"
                     id="password"
                     name="password"
-                    onChange={event => onChangeHandler(event)} />
+                    onChange={event => onChangeHandler(event)} 
+                    required />
+                <label htmlFor="password">Confirm Password:</label>
+                <input
+                    type="password"
+                    id="repeatPassword"
+                    name="repeatPassword"
+                    onChange={event => onChangeHandler(event)} 
+                    required />
                 <input
                     type="submit"
                     id="registerbtn"
@@ -56,7 +80,7 @@ const Register = (props) => {
             </form>
 
             <h3 className={styles.registerText}>If you already have an account<Link to="/login"><button className={styles.linkToLoginBtn}> Sign In</button></Link></h3>
-            
+
         </div>
     )
 }

@@ -13,9 +13,9 @@
 }
 
 .textWrapper {
-    width: 250px;
     margin: 20px;
     z-index: 0;
+    font-size: 18px;
 }
 .textWrapper p {
     margin-top: 5px;
@@ -25,10 +25,6 @@
     width: 300px;
     height: 196px;
     object-fit: cover;
-}
-
-.liWrapper {
-    margin: 20px;
 }
 
 .joinBtn {

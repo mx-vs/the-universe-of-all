@@ -14,8 +14,8 @@ const Header = (props) => {
                     style={{ textDecoration: "none" }}
                     className={styles.navLink}>
                     <li>Register</li>
-                </Link>)
-        } else {
+                </Link>
+                )} else {
             return (
                 <li
                     style={{ textDecoration: "none" }}
@@ -46,16 +46,10 @@ const Header = (props) => {
                         <li>Adventures</li>
                     </Link>
                     <Link
-                        to="/characters"
+                        to="/my-characters"
                         style={{ textDecoration: "none" }}
                         className={styles.navLink}>
-                        <li>Characters</li>
-                    </Link>
-                    <Link
-                        to="/my-profile"
-                        style={{ textDecoration: "none" }}
-                        className={styles.navLink}>
-                        <li>{user ? user + "'s" : "My"} Profile</li>
+                        <li>{user ? user + "'s" : "My"} Characters</li>
                     </Link>
                     {dependantButtons()}
                 </ul>

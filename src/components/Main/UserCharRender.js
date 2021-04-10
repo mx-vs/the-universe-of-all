@@ -1,8 +1,8 @@
-import React, { useEffect, useState, useRef } from "react";
-import styles from "./SingleCharRender.module.css";
+import React, { useEffect, useState } from "react";
+import styles from "./UserCharRender.module.css";
 import firebase from "../../services/firebase";
 
-const SingleCharRender = (props) => {
+const UserCharRender = (props) => {
     let [userChar, setUserChar] = useState([]);
 
     useEffect(() => {
@@ -71,4 +71,4 @@ const SingleCharRender = (props) => {
     )
 }
 
-export default SingleCharRender;
+export default UserCharRender;

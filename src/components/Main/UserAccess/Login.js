@@ -17,7 +17,14 @@ const Login = (props) => {
                 localStorage.setItem("currentUser", email);
                 props.setUserEmail(email);
                 history.push("/");
-            });
+            })
+            .catch(function (error) {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                if (errorCode) {
+                    alert(errorMessage);
+                }
+            })
     };
 
     const onChangeHandler = event => {
@@ -37,12 +44,16 @@ const Login = (props) => {
                 <input
                     type="email"
                     name="email"
-                    onChange={event => onChangeHandler(event)} />
+                    onChange={event => onChangeHandler(event)}
+                    required
+                />
                 <label htmlFor="password">Password:</label>
                 <input
                     type="password"
                     name="password"
-                    onChange={event => onChangeHandler(event)} />
+                    onChange={event => onChangeHandler(event)}
+                    required
+                />
                 <input
                     type="submit"
                     id="loginbtn"

@@ -33,7 +33,6 @@
 }
 
 .map:hover {
-    cursor: zoom-in;
     transform: scale(1.49);
 }
 
@@ -42,6 +41,7 @@
     color: silver;
     border: 2px solid silver;
     padding: 10px;
+    width: 860px;
 }
 
 .message:hover {

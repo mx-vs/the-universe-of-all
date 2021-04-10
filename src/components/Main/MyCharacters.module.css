@@ -20,3 +20,11 @@
     background-position: center;
     color: black;
 }
+
+.message {
+    font-size: 20px;
+    color: silver;
+    border: 2px solid silver;
+    padding: 10px;
+    text-align: center;
+}

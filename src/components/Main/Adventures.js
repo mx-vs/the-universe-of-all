@@ -12,15 +12,9 @@ class Adventures extends React.Component {
                     <section className={styles.textWrapper}>
                         <h3>Chaos</h3>
                         <p>Location: Astarian</p>
-                        <p>Races divided, nations at War. A hidden darkness corrupts the lands. Join to uncover the secret of healing this Astarian.</p>
+                        <p>Type: Campaign</p>
+                        <p>Races divided, nations at War. A hidden darkness corrupts the lands. Uncover the secret of healing Astarian.</p>
                     </section>
-                    <ul className={styles.liWrapper}>
-                        <h4>Characters</h4>
-                        <li>Morina</li>
-                        <li>Zorna</li>
-                        <li>Libeto</li>
-                        <button className={styles.joinBtn}>Join Adventure</button>
-                    </ul>
                 </section>
 
                 <section className={styles.adventure}>
@@ -30,15 +24,9 @@ class Adventures extends React.Component {
                     <section className={styles.textWrapper}>
                         <h3>Miner Disaster</h3>
                         <p>Location: Irian</p>
+                        <p>Type: Oneshot</p>
                         <p>During regular mining work, your crew discovers a hidden city beneath the dust and dirt. Explore the city and its secrets.</p>
                     </section>
-                    <ul className={styles.liWrapper}>
-                        <h4>Characters</h4>
-                        <li>Zepho</li>
-                        <li>Hosel</li>
-                        <li>Lisna</li>
-                        <button className={styles.joinBtn}>Join Adventure</button>
-                    </ul>
                 </section>
 
                 <section className={styles.adventure}>
@@ -48,15 +36,9 @@ class Adventures extends React.Component {
                     <section className={styles.textWrapper}>
                         <h3>Thief Unknown</h3>
                         <p>Location: Borliarde, Astarian</p>
+                        <p>Type: Oneshot</p>
                         <p>During a grand ball hosted by House Ventruavian, a necklace belonging to the Duchess herself is stolen in a grand display of thievery. Uncover the thief.</p>
                     </section>
-                    <ul className={styles.liWrapper}>
-                        <h4>Characters</h4>
-                        <li>Senga</li>
-                        <li>Lida</li>
-                        <li>Ronio</li>
-                        <button className={styles.joinBtn}>Join Adventure</button>
-                    </ul>
                 </section>
             </div>
         )

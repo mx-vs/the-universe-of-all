@@ -5,7 +5,7 @@ import Home from "./Home";
 import CharCreator from "./CharCreator";
 import CharDetails from "./CharDetails";
 import Adventures from "./Adventures";
-import MyProfile from "./MyProfile";
+import MyCharacters from "./MyCharacters";
 import Register from "./UserAccess/Register"
 import Login from "./UserAccess/Login"
 
@@ -40,8 +40,8 @@ const Main = (props) => {
                     <Adventures />
                 </Route>
 
-                <Route exact path="/my-profile">
-                    <MyProfile
+                <Route exact path="/my-characters">
+                    <MyCharacters
                         userEmail={props.userEmail}
                         setUserEmail={props.setUserEmail}
                     />
