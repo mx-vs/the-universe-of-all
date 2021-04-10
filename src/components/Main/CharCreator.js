@@ -17,7 +17,6 @@ class CharCreator extends React.Component {
     render() {
         return (
             <main className={styles.charCreatorMain}>
-
                 <h2>Character Creator</h2>
                 <RealmSelect
                     handleRealmSelectProps={this.handleRealmSelect}

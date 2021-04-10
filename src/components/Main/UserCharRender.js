@@ -39,12 +39,14 @@ const UserCharRender = (props) => {
                 <section className={styles.charImgWrapper}>
                     <img src={char.imageUrl} alt="" className="" />
                 </section>
+                
                 <section className={styles.charTextWrapper}>
                     <h3 id="name">{char.name}</h3>
                     <p>Race: {char.race}</p>
                     <p>Class: {char.classNameDND}</p>
                     <p>Alignment: {char.alignment}</p>
                 </section>
+
                 <ul className={styles.attributesLiWrapper}>
                     <h4>Attributes</h4>
                     <li>Strenght: {char.str}</li>
@@ -54,16 +56,22 @@ const UserCharRender = (props) => {
                     <li>Wisdom: {char.wis}</li>
                     <li>Charisma: {char.cha}</li>
                 </ul>
+
                 <section>
                     <button className={styles.btn}>Edit Character</button>
                     <button className={styles.btn} onClick={() => {
-                            firebase.firestore().collection(props.userEmail).doc(char.charId).delete().then(() => {
+                        firebase.firestore()
+                            .collection(props.userEmail)
+                            .doc(char.charId)
+                            .delete()
+                            .then(() => {
                                 alert("Character successfully deleted!");
                                 history.push("/");
-                            }); 
+                            });
                     }}>Delete Character</button>
                 </section>
             </section>
+
             <section className={styles.charDetailsWrapper}>
                 <p>Description: {char.desc}</p>
                 <p>Features & Traits: {char.features}</p>

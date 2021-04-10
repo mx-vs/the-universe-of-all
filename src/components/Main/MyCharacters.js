@@ -24,7 +24,14 @@ const MyCharacters = (props) => {
                 </div>
             </div>
     } else {
-        divToRender = <Link to="/register" style={{ textDecoration: "none" }}><h1 className={styles.message}> Please Register or Login to see your Characters</h1></Link>
+        divToRender =
+            <Link
+                to="/register"
+                style={{ textDecoration: "none" }}>
+                <h1 className={styles.message}>
+                    Please Register or Login to see your Characters
+                </h1>
+            </Link>
     }
 
     return (

@@ -3,10 +3,7 @@ import { Link } from "react-router-dom";
 import styles from "./RaceSelect.module.css";
 
 class RaceSelect extends React.Component {
-
-    const 
     render() {
-        let displayNone = {};
         let displayAstarianRaces = {};
         let displayIrianRaces = {};
 
@@ -21,13 +18,7 @@ class RaceSelect extends React.Component {
 
         return (
             <section className={styles.charCreatorRaces}>
-
                 <p>Select a Race</p>
-
-                <section style={displayNone}>
-
-                </section>
-
                 <section className={styles.charCreatorRacesAstarian} style={displayAstarianRaces} >
                     <div>
                         <h4>Goliath</h4>
@@ -43,11 +34,25 @@ class RaceSelect extends React.Component {
                     </div>
 
                     <div>
-                        <Link to="./character-details"><img src="https://i.imgur.com/88IrDbe.jpg" alt="" className={styles.raceImg} onClick={() => {this.props.setRace("Goliath")}}/></Link>
+                        <Link
+                            to="./character-details">
+                            <img src="https://i.imgur.com/88IrDbe.jpg"
+                                alt=""
+                                className={styles.raceImg}
+                                onClick={() => { this.props.setRace("Goliath") }}
+                            />
+                        </Link>
                     </div>
 
                     <div>
-                        <Link to="./character-details"><img src="https://i.imgur.com/VmYg0Zl.jpg" alt="" className={styles.raceImg} onClick={() => {this.props.setRace("Vampirian")}}/></Link>
+                        <Link
+                            to="./character-details">
+                            <img src="https://i.imgur.com/VmYg0Zl.jpg"
+                                alt=""
+                                className={styles.raceImg}
+                                onClick={() => { this.props.setRace("Vampirian") }}
+                            />
+                        </Link>
                     </div>
 
                     <div>
@@ -77,11 +82,24 @@ class RaceSelect extends React.Component {
                     </div>
 
                     <div>
-                        <Link to="./character-details"><img src="https://i.imgur.com/LeQtQM3.png" alt="" className={styles.raceImg} onClick={() => {this.props.setRace("Lumian")}}/></Link>
+                        <Link
+                            to="./character-details"><img
+                                src="https://i.imgur.com/LeQtQM3.png"
+                                alt="" className={styles.raceImg}
+                                onClick={() => { this.props.setRace("Lumian") }}
+                            />
+                        </Link>
                     </div>
 
                     <div>
-                        <Link to="./character-details"><img src="https://i.imgur.com/RRGpfki.png" alt="" className={styles.raceImg} onClick={() => {this.props.setRace("Crystalborn")}}/></Link>
+                        <Link
+                            to="./character-details">
+                            <img src="https://i.imgur.com/RRGpfki.png"
+                                alt=""
+                                className={styles.raceImg}
+                                onClick={() => { this.props.setRace("Crystalborn") }}
+                            />
+                        </Link>
                     </div>
 
                     <div>
@@ -97,11 +115,7 @@ class RaceSelect extends React.Component {
                     </div>
                 </section>
             </section>
-
-
-
         )
-
     }
 }
 

@@ -15,7 +15,8 @@ const Header = (props) => {
                     className={styles.navLink}>
                     <li>Register</li>
                 </Link>
-                )} else {
+            )
+        } else {
             return (
                 <li
                     style={{ textDecoration: "none" }}
@@ -36,7 +37,6 @@ const Header = (props) => {
                     <h1>The Universe of All</h1>
                 </Link>
             </div>
-
             <nav>
                 <ul className={styles.navUl}>
                     <Link

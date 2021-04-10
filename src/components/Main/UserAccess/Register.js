@@ -26,7 +26,7 @@ const Register = (props) => {
         if (repeatPassword !== password) {
             alert("Passwords do not match!")
             setPassword(null);
-            setRepeatPassword (null);
+            setRepeatPassword(null);
         } else {
             firebase.auth().createUserWithEmailAndPassword(email, password)
                 .then((userCredential) => {
@@ -52,21 +52,21 @@ const Register = (props) => {
                     type="email"
                     id="email"
                     name="email"
-                    onChange={event => onChangeHandler(event)} 
+                    onChange={event => onChangeHandler(event)}
                     required />
                 <label htmlFor="password">Password:</label>
                 <input
                     type="password"
                     id="password"
                     name="password"
-                    onChange={event => onChangeHandler(event)} 
+                    onChange={event => onChangeHandler(event)}
                     required />
                 <label htmlFor="password">Confirm Password:</label>
                 <input
                     type="password"
                     id="repeatPassword"
                     name="repeatPassword"
-                    onChange={event => onChangeHandler(event)} 
+                    onChange={event => onChangeHandler(event)}
                     required />
                 <input
                     type="submit"
@@ -79,8 +79,14 @@ const Register = (props) => {
                 <label htmlFor="registerbtn">Register</label>
             </form>
 
-            <h3 className={styles.registerText}>If you already have an account<Link to="/login"><button className={styles.linkToLoginBtn}> Sign In</button></Link></h3>
-
+            <h3 className={styles.registerText}>
+                If you already have an account
+                <Link to="/login">
+                    <button className={styles.linkToLoginBtn}>
+                        Sign In
+                    </button>
+                </Link>
+            </h3>
         </div>
     )
 }

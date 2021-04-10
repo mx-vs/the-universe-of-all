@@ -7,7 +7,7 @@ const ButtonCreateChar = () => {
     const handleClick = () => history.push("/character-creator");
 
     return (
-        <button className={styles.buttonCreateChar} onClick={handleClick} >Create a Character</button>
+        <button className={styles.buttonCreateChar} onClick={handleClick}>Create a Character</button>
     )
 }
 

@@ -8,7 +8,6 @@ const Login = (props) => {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [error, setError] = useState(null);
 
     const signInUserWithEmailAndPasswordHandler = (event, email, password) => {
         event.preventDefault();

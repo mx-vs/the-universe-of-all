@@ -7,7 +7,6 @@ class RealmSelect extends React.Component {
         return (
             <div>
                 <p>Select a Realm to begin your adventure</p>
-
                 <section className={styles.charCreatorRealms}>
                     <section className={styles.charCreatorRealmsOne}>
                         <img
