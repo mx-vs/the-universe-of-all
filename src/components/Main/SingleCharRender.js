@@ -31,8 +31,6 @@ const SingleCharRender = (props) => {
             })
     }, []);
 
-
-
     const displayUserChars = userChar.map((char) => (
         <div className={styles.myProfileDiv} key={char.id}>
             <section className={styles.char}>
