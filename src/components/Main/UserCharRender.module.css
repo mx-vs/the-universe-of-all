@@ -12,6 +12,7 @@
 .char {
     display: flex;
     align-content: space-between;
+    height: 180px;
 }
 
 .charTextWrapper {
@@ -28,11 +29,12 @@
     height: 160px;
     margin: 20px;
     object-fit: cover;
+    object-position: 50% 30%;
     border-radius: 3px;
 }
 
 .attributesLiWrapper {
-    margin: 20px;
+    margin: 20px 40px;
     width: 250px;
 }
 
@@ -50,7 +52,7 @@
     font-family: 'IM Fell DW Pica', serif;
     font-size: 15px;
     margin-top: 20px;
-    margin-left: 20px;
+    margin-right: 20px;
     width: 130px;
     height: 30px;
     border: 2px solid silver;

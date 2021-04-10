@@ -35,8 +35,7 @@ const MyCharacters = (props) => {
     }
 
     return (
-
-        <div className={styles.profDiv}>
+        <div>
             {divToRender}
         </div>
     )

@@ -58,7 +58,6 @@ const UserCharRender = (props) => {
                 </ul>
 
                 <section>
-                    <button className={styles.btn}>Edit Character</button>
                     <button className={styles.btn} onClick={() => {
                         firebase.firestore()
                             .collection(props.userEmail)
@@ -73,8 +72,8 @@ const UserCharRender = (props) => {
             </section>
 
             <section className={styles.charDetailsWrapper}>
-                <p>Description: {char.desc}</p>
-                <p>Features & Traits: {char.features}</p>
+                <p><strong>Description:</strong> {char.desc}</p>
+                <p><strong>Features & Traits:</strong> {char.features}</p>
             </section>
         </div>
     ))
