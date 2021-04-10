@@ -68,3 +68,9 @@
     background-position: center;
     color: black;
 }
+
+@media print {
+    .myProfileDiv {
+        background-color: black;
+    }
+}

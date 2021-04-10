@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import styles from "./SingleCharRender.module.css";
 import firebase from "../../services/firebase";
 
@@ -55,7 +55,6 @@ const SingleCharRender = (props) => {
                 <section>
                     <button className={styles.btn}>Edit Character</button>
                     <button className={styles.btn}>Delete Character</button>
-                    <button className={styles.btn}>Print Character</button>
                 </section>
             </section>
             <section className={styles.charDetailsWrapper}>

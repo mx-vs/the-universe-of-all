@@ -1,44 +1,25 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import styles from "./MyProfile.module.css";
-import firebase from "../../services/firebase";
 import SingleCharRender from "./SingleCharRender";
+import ReactToPrint from 'react-to-print';
 
 const MyProfile = (props) => {
 
-    /* let [userChar, setUserChar] = useState([]);
-
-    useEffect(() => {
-        firebase.firestore().collection(props.userEmail).get()
-            .then((querySnapshot) => {
-                querySnapshot.forEach((doc) => {
-                    setUserChar({
-                        id: doc.id,
-                        name: doc.data().name,
-                        race: doc.data().raceDnd,
-                        classNameDND: doc.data().classNameDND,
-                        alignment: doc.data().alignment,
-                        imageUrl: doc.data().imageUrl,
-                        str: doc.data().str,
-                        dex: doc.data().dex,
-                        con: doc.data().con,
-                        int: doc.data().int,
-                        wis: doc.data().wis,
-                        cha: doc.data().cha,
-                        desc: doc.data().desc,
-                        features: doc.data().features
-                    })
-                });
-            });
-    }, []);
-
-    console.log(userChar); */
-    
+    const printRef = useRef();
 
     return (
-            <SingleCharRender
-                userEmail={props.userEmail}
-                setUserEmail={props.setUserEmail}
+        <div className={styles.profDiv}>
+            <ReactToPrint
+                trigger={() => <button className={styles.btn}>Print My Characters</button>}
+                content={() => printRef.current}
             />
+            <div ref={printRef}>
+                <SingleCharRender
+                    userEmail={props.userEmail}
+                    setUserEmail={props.setUserEmail}
+                />
+            </div>
+        </div>
     )
 }
 

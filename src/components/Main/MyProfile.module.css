@@ -1,0 +1,22 @@
+.btn {
+    color: silver;
+    font-family: 'IM Fell DW Pica', serif;
+    font-size: 15px;
+    margin: auto;
+    width: 130px;
+    height: 30px;
+    border: 2px solid silver;
+    border-radius: 3px;
+    cursor: pointer;
+    align-self: flex-end;
+    z-index: -1;
+    background:
+        linear-gradient(45deg, silver 50%, transparent 0) right /250% 100% no-repeat,
+        linear-gradient(45deg, transparent 50%,silver 0) left /250% 100% no-repeat;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-position: center;
+    color: black;
+}
