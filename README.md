@@ -1,6 +1,6 @@
 # The Universe of All
 A web application written with React for a fantasy Dungeons and Dragons universe I created, to be used in my home games. 
-<br>For SoftUni React Exam - April 2021.
+<br>For SoftUni React Exam - April 2021. The application has been made on a 1920 x 1080 resolution (non-responsive).
 
 ## Overview
 The application includes 15 components (4 Class 11 Functional). CSS is handled within modules. 
