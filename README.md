@@ -37,3 +37,6 @@ Components marked with * are class components.
   - Login
 - Aside
 - Footer
+- 
+## Deployment
+https://universe-of-all.netlify.app/
